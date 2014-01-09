@@ -58,6 +58,7 @@ namespace assign_detail
     class call_push_back
     {
         C& c_;
+        call_push_back& operator= (const call_push_back&);
     public:
         call_push_back( C& c ) : c_( c )
         { }
@@ -73,6 +74,7 @@ namespace assign_detail
     class call_push_front
     {
         C& c_;
+        call_push_front& operator= (const call_push_front&);
     public:
         call_push_front( C& c ) : c_( c )
         { }
@@ -88,6 +90,7 @@ namespace assign_detail
     class call_push
     {
         C& c_;
+        call_push& operator= (const call_push&);
     public:
         call_push( C& c ) : c_( c )
         { }
@@ -103,6 +106,7 @@ namespace assign_detail
     class call_insert
     {
         C& c_;
+        call_insert& operator= (const call_insert&);
     public:
         call_insert( C& c ) : c_( c )
         { }
@@ -118,6 +122,7 @@ namespace assign_detail
     class call_add_edge
     {
         C& c_;
+        call_add_edge& operator= (const call_add_edge&);
     public:
         call_add_edge( C& c ) : c_(c)
         { }
