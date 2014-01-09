@@ -14,6 +14,8 @@
 
 #if defined(_MSC_VER)
 # pragma once
+# pragma warning(push)
+# pragma warning(disable: 4701) // potentially uninitialized local variable used
 #endif
 
 #include <boost/assign/assignment_exception.hpp>
@@ -677,5 +679,9 @@ namespace assign
 #undef BOOST_ASSIGN_PARAMS4
 #undef BOOST_ASSIGN_PARAMS2_NO_REF
 #undef BOOST_ASSIGN_MAX_PARAMETERS
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #endif
