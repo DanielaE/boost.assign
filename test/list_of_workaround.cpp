@@ -40,6 +40,8 @@ void check_list_of()
     array<int,4>       a  = list_of(1)(2)(3)(4).to_array( a );
     const vector<int>  v2 = list_of(1).to_container( v2 );
     const array<int,1> a2 = list_of(1).to_array( a2 );
+	(void)a;
+	(void)a2;
 }
 
 
@@ -47,7 +49,7 @@ void check_list_of()
 #include <boost/test/unit_test.hpp>
 using boost::unit_test::test_suite;
 
-test_suite* init_unit_test_suite( int argc, char* argv[] )
+test_suite* init_unit_test_suite( int, char*[] )
 {
     test_suite* test = BOOST_TEST_SUITE( "List Test Suite" );
 

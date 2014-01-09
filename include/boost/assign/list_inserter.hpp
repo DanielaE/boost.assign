@@ -65,7 +65,7 @@ namespace assign_detail
         template< class T >
         void operator()( T r ) 
         {
-            c_.push_back( r );
+            c_.push_back( static_cast<typename C::value_type>(r) );
         }
     };
     

@@ -44,7 +44,7 @@ struct FooBar : Foo
     FooBar( int i ) : Foo(i)
     { }
     
-    FooBar( int i, const char* )
+    FooBar( int, const char* )
     { }
 };
 
@@ -95,7 +95,7 @@ void check_ptr_list_inserter()
 #include <boost/test/unit_test.hpp>
 using boost::unit_test::test_suite;
 
-test_suite* init_unit_test_suite( int argc, char* argv[] )
+test_suite* init_unit_test_suite( int, char*[] )
 {
     test_suite* test = BOOST_TEST_SUITE( "List Test Suite" );
 

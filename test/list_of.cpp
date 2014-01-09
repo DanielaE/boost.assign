@@ -15,6 +15,9 @@
 #  pragma warn -8091 // suppress warning in Boost.Test
 #  pragma warn -8057 // unused argument argc/argv in Boost.Test
 #endif
+#ifdef BOOST_MSVC
+#  pragma warning(disable:4244) // narrowing conversions
+#endif
 
 #include <boost/assign/list_of.hpp>
 #include <boost/test/test_tools.hpp>
@@ -289,7 +292,7 @@ void check_list_of()
 #include <boost/test/unit_test.hpp>
 using boost::unit_test::test_suite;
 
-test_suite* init_unit_test_suite( int argc, char* argv[] )
+test_suite* init_unit_test_suite( int, char*[] )
 {
     test_suite* test = BOOST_TEST_SUITE( "List Test Suite" );
 
