@@ -38,7 +38,7 @@ void check_basic_usage()
 #include <boost/test/unit_test.hpp>
 using boost::unit_test::test_suite;
 
-test_suite* init_unit_test_suite( int argc, char* argv[] )
+test_suite* init_unit_test_suite( int, char*[] )
 {
     test_suite* test = BOOST_TEST_SUITE( "Assign Test Suite" );
 

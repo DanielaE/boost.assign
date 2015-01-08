@@ -61,6 +61,8 @@ private:
         {
             m[ name ] = check_addr_book;
         }
+    private:
+        add_to_map& operator=( const add_to_map& );
     };
 
     struct add_to_vector
@@ -74,6 +76,8 @@ private:
         {
             m.push_back( r );
         }
+    private:
+        add_to_vector& operator=( const add_to_vector& );
     };
 
 public:
@@ -144,7 +148,7 @@ void check_list_inserter()
 #include <boost/test/unit_test.hpp>
 using boost::unit_test::test_suite;
 
-test_suite* init_unit_test_suite( int argc, char* argv[] )
+test_suite* init_unit_test_suite( int, char*[] )
 {
     test_suite* test = BOOST_TEST_SUITE( "List Test Suite" );
 
