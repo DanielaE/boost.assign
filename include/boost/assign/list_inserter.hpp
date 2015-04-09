@@ -30,6 +30,11 @@
 #include <boost/preprocessor/iteration/local.hpp>
 #include <boost/preprocessor/arithmetic/inc.hpp>
 
+#if defined(_MSC_VER)
+# pragma warning(push)
+# pragma warning(disable: 4244) // conversion, possible loss of data
+#endif
+
 namespace boost
 {
 namespace assign_detail
@@ -396,6 +401,10 @@ namespace assign
     
 } // namespace 'assign'
 } // namespace 'boost'
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #undef BOOST_ASSIGN_PARAMS1
 #undef BOOST_ASSIGN_PARAMS2
